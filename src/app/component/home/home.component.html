@@ -1,0 +1,40 @@
+<div>
+  <nav class="nav nav-fill " style="background-color: #00C2BC;">
+    <a class="nav-link active border-bottom lightFont" aria-current="page" [routerLink]="['/home']"
+      routerLinkActive="router-link-active">
+      <div>
+        <i class="fab fa-gripfire"></i>
+        <p>热销榜</p>
+      </div>
+    </a>
+    <a class="nav-link border-bottom" [routerLink]="['/detail']" routerLinkActive="router-link-active">
+      <div class="lightFont">
+        <i class="fas fa-clipboard-list"></i>
+        <p>点过的菜</p>
+      </div>
+    </a>
+    <a class="nav-link border-bottom" href="#">
+      <div class="lightFont">
+        <i class="fas fa-search"></i>
+        <p>猜你喜欢</p>
+      </div>
+    </a>
+  </nav>
+  <div class="container overflow-hidden">
+    <div *ngFor="let item of menu.result">
+      <h4 class="d-flex justify-content-center">{{item.title}}</h4>
+      <div class="row">
+        <div class="col-4 p-2" *ngFor="let detail of item.list">
+          <a class="p-2  border " [routerLink]="['/detail/',detail._id]" routerLinkActive="router-link-active" >
+            <!-- <img [src]="domin+detail.img_url" alt=""> -->
+            {{detail.title}}
+            <br>
+            ¥{{detail.price}}
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
