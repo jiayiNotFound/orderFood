@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
     this.store.get(this.api)
     .subscribe(value=>{
       this.menu=value
-      console.log(this.menu)
+      // console.log(this.menu)
 
     })
 
